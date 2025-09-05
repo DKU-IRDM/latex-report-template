@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+
+% -------------------------------------------------------------------------
+
+% 한국어 설정
+\usepackage{kotex}
+
+% 링크 설정
+\usepackage[hidelinks,colorlinks=true,linkcolor=magenta,citecolor=magenta,urlcolor=blue]{hyperref}
+
+% 그림 설정
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\setlength{\textfloatsep}{25pt plus 2pt minus 4pt}
+\setlength{\floatsep}{25pt plus 2pt minus 2pt}
+\setlength{\intextsep}{25pt plus 2pt minus 2pt}
+
+% 여백 설정
+\usepackage{geometry}
+\geometry{margin=25mm}
+
+% 섹션 설정
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{5ex plus 1ex minus .2ex}{2ex}
+\titlespacing*{\subsection}{0pt}{4ex plus 1ex minus .2ex}{1ex}
+\titlespacing*{\subsubsection}{0pt}{3ex plus .8ex minus .2ex}{1ex}
+\setcounter{secnumdepth}{3}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% 행간 설정
+\usepackage{setspace}
+\setstretch{1.2}
+
+% 들여쓰기 설정
+\usepackage{indentfirst}
+
+% -------------------------------------------------------------------------
+
+% 참고문헌
+\usepackage[backend=biber,style=numeric,sorting=nty]{biblatex}
+\addbibresource{references.bib}
+
+% -------------------------------------------------------------------------
+
+% 제목 등 설정
+\makeatletter
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+\newcommand{\studentinfo}[1]{\gdef\@studentinfo{#1}}
+\def\@subtitle{}
+\def\@studentinfo{}
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\bfseries \@title\par}
+    \vspace{0.5em}
+    {\large \@subtitle\par}
+  \end{center}
+  \vspace{-1.0em}
+  \begin{flushright}
+    \normalsize \@studentinfo
+  \end{flushright}
+}
+\makeatother
+
+% -------------------------------------------------------------------------
+% -------------------------------------------------------------------------
+
+\begin{document}
+
+\title{제목}
+
+\subtitle{부제}
+
+\studentinfo{학번 이름}
+
+\maketitle
+
+% -------------------------------------------------------------------------
+
+\section{섹션 제목}
+
+    본문 예시.
+
+    링크 예시: \href{https://dku-irdm.github.io/}{link}.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{figures/example.png}
+        \caption{예시 그림 캡션}
+        \label{fig:example}
+    \end{figure}
+
+    \subsection{서브섹션 제목}
+    
+        레퍼런스 예시 \cite{seol2025example}.
+    
+        \subsubsection{서브서브섹션 제목}
+
+            내용 예시.
+
+
+\section{새로운 섹션 제목}
+
+    내용.
+
+% -------------------------------------------------------------------------
+% -------------------------------------------------------------------------
+
+\vspace{1.0em}
+\printbibliography[title={참고문헌}]
+
+% -------------------------------------------------------------------------
+
+\end{document}
