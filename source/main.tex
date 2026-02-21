@@ -16,6 +16,9 @@
 \setlength{\floatsep}{25pt plus 2pt minus 2pt}
 \setlength{\intextsep}{25pt plus 2pt minus 2pt}
 
+% 표 설정
+\usepackage{booktabs}
+
 % 수식 설정
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -152,12 +155,32 @@
             \end{enumerate}
     \end{enumerate}
 
-    \noindent 번호를 안붙이고 싶다면:
+    번호를 안붙이고 싶다면:
 
     \begin{itemize}
         \item 번호 없는 내용
         \item 번호 없는 내용
     \end{itemize}
+
+\section{새로운 섹션 제목}
+
+    표 예시:
+
+    \begin{table}[h]
+        \centering
+        \caption{표.}
+        \label{tab:dataset}
+        \begin{tabular}{c|lr}
+            \toprule
+                A  & B  & C \\
+            \midrule
+                a1 & b1 & c1 \\
+                a2 & b2 & c2 \\
+                a3 & b3 & c3 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
 
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
